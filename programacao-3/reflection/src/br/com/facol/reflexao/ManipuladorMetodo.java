@@ -2,19 +2,30 @@ package br.com.facol.reflexao;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class ManipuladorMetodo {
 
     private Object instancia;
     private Method metodo;
-    public ManipuladorMetodo(Object instancia, Method metodo) {
+    private Map<String, Object> params;
+
+    public ManipuladorMetodo(Object instancia, Method metodo, Map<String, Object> params) {
         this.instancia = instancia;
         this.metodo = metodo;
+        this.params = params;
     }
 
     public Object invoca(){
         try {
-            return metodo.invoke(this.instancia);
+            List<Object> parametros = new ArrayList<>();
+            Stream.of(metodo.getParameters())
+                    .forEach(p -> parametros.add(params.get(p.getName())));
+            metodo.setAccessible(true);
+            return metodo.invoke(this.instancia, parametros.toArray());
         } catch (IllegalAccessException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
