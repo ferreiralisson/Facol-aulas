@@ -1,4 +1,4 @@
-import br.com.facol.config.Request;
+import br.com.facol.config.RequestHandler;
 
 import java.util.Scanner;
 
@@ -8,10 +8,10 @@ public class Main {
 
         try (Scanner scanner = new Scanner(System.in)){
             String url = scanner.nextLine();
-            Request request = new Request("br.com.facol.controller.");
+            RequestHandler requestHandler = new RequestHandler("br.com.facol.controller.");
 
             while (!url.equals("exit")){
-                Object response = request.executa(url);
+                Object response = requestHandler.executa(url);
                 System.out.println("Response: " + response);
 
                 url = scanner.nextLine();
