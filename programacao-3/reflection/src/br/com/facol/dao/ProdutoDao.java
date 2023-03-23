@@ -1,18 +1,12 @@
 package br.com.facol.dao;
 
-import br.com.facol.domain.Produto;
-import br.com.facol.domain.ProdutoMock;
-
 import java.util.List;
 
-public class ProdutoDao {
+import br.com.facol.domain.Produto;
 
-    public Produto listarProduto(){
-        return ProdutoMock.listarProduto();
-    }
-
-    public List<Produto> listarProdutos(){
-        return ProdutoMock.listarProdutos();
-    }
+public interface ProdutoDao {
+	
+	public Produto listarProduto();
+	public List<Produto> listarProdutos();
 
 }

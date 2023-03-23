@@ -1,4 +1,4 @@
-package br.com.facol.reflexao;
+package br.com.facol.config.reflexao;
 
 import java.lang.reflect.Constructor;
 

@@ -1,4 +1,4 @@
-package br.com.facol.reflexao;
+package br.com.facol.config.reflexao;
 
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -16,8 +16,12 @@ public class ManipuladorObjeto {
 
         Stream<Method> metodos = Stream.of(instancia.getClass().getDeclaredMethods());
         Method metodoSelecionado = metodos.filter(
-                metodo -> metodo.getParameterCount() == params.values().size() &&
+                metodo -> 
+                
+                		metodo.getParameterCount() == params.values().size() &&
+                
                         metodo.getName().equals(nomeMetodo) &&
+                        
                         Stream.of(metodo.getParameters())
                                 .allMatch(arg ->
                                             params.keySet().contains(arg.getName()) &&

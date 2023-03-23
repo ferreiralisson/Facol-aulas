@@ -1,9 +1,14 @@
 package br.com.facol.domain;
 
+import br.com.facol.util.NomeTagXml;
+
+@NomeTagXml("product")
 public class Produto {
 
     private Integer id;
+    @NomeTagXml("name")
     private String nome;
+    @NomeTagXml("brand")
     private String marca;
 
     public Produto(Integer id, String nome, String marca) {

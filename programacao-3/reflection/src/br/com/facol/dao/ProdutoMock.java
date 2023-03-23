@@ -1,13 +1,15 @@
-package br.com.facol.domain;
+package br.com.facol.dao;
 
 import java.util.List;
 
-public class ProdutoMock {
-    public static Produto listarProduto(){
+import br.com.facol.domain.Produto;
+
+public class ProdutoMock implements ProdutoDao {
+    public Produto listarProduto(){
         return new Produto(1, "MousePad", "Multilaser");
     }
 
-    public static List<Produto> listarProdutos(){
+    public List<Produto> listarProdutos(){
         return List.of(
                 new Produto(1, "MOUSEPAD", "MULTILASER"),
                 new Produto(2, "TECLADO", "MANCER"),
