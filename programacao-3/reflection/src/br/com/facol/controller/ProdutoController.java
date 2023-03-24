@@ -3,14 +3,14 @@ package br.com.facol.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.facol.dao.ProdutoDao;
 import br.com.facol.domain.Produto;
+import br.com.facol.service.ProdutoService;
 
 public class ProdutoController {
 
-	private ProdutoDao service;
+	private ProdutoService service;
 
-	public ProdutoController(ProdutoDao service) {
+	public ProdutoController(ProdutoService service) {
 		this.service = service;
 	}
 

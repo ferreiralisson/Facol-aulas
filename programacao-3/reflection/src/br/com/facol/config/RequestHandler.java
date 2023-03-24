@@ -36,16 +36,6 @@ public class RequestHandler {
 				})
 				.invoca();
 
-//		Object retorno = new Reflexao()
-//				.refleteClasse(pacoteBasico + nomeController)
-//				.criarInstancia()
-//				.getMetodo(nomeMetodo, params)
-//				.comTratamentoDeExcecao((metodo, ex) -> {
-//					System.out.println("Erro no método " + metodo.getName() + " da classe "
-//							+ metodo.getDeclaringClass().getName() + ".\n\n");
-//					throw new RuntimeException("ERRO!");
-//				})
-//				.invoca();
 
 		retorno = new ConversorXML().converte(retorno);
 

@@ -28,8 +28,7 @@ public class ContainerIoC {
 
 			if (construtorPadrao.isPresent()) {
 
-				Object instancia = construtorPadrao.get().newInstance();
-				return instancia;
+				return construtorPadrao.get().newInstance();
 			} else {
 
 				Constructor<?> construtor = tipoFonte.getDeclaredConstructors()[0];
@@ -52,7 +51,6 @@ public class ContainerIoC {
 	}
 
 	public <T, K extends T> void registra(Class<T> tipoFonte, Class<K> tipoDestino) {
-
 		mapaDeTipos.put(tipoFonte, tipoDestino);
 	}
 }
