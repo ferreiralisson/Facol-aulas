@@ -1,0 +1,15 @@
+2023-04-24 21:33:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE address (\000a  `id` bigint NOT NULL AUTO_INCREMENT,\000a  `cep` varchar(10) DEFAULT NULL,\000a  `logradouro` varchar(255),\000a  `complemento` varchar(255),\000a  `bairro` varchar(255),\000a  `localidade` varchar(200),\000a  `uf` varchar(3),\000a  `gia` varchar(10),\000a  `ddd` varchar(15),\000a  `siafi` varchar(10),\000a  PRIMARY KEY (`id`)\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"; expected "identifier"; SQL statement:
+CREATE TABLE address (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `cep` varchar(10) DEFAULT NULL,
+  `logradouro` varchar(255),
+  `complemento` varchar(255),
+  `bairro` varchar(255),
+  `localidade` varchar(200),
+  `uf` varchar(3),
+  `gia` varchar(10),
+  `ddd` varchar(15),
+  `siafi` varchar(10),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci [42001-214]

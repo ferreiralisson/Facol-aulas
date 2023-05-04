@@ -1,4 +1,4 @@
-package br.com.facol.domain;
+package br.com.facol.bank.domain;
 
 public class Conta {
 

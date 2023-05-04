@@ -3,16 +3,16 @@ package br.com.facol.exemplo.service;
 
 import br.com.facol.exemplo.domain.Endereco;
 import br.com.facol.exemplo.dto.EnderecoDTO;
-import br.com.facol.exemplo.repository.CepRepository;
+import br.com.facol.exemplo.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class CepServiceImpl implements CepService {
+public class EnderecoServiceImpl implements EnderecoService {
 
     @Autowired
-    private CepRepository repository;
+    private EnderecoRepository repository;
 
     public EnderecoDTO getCep(String cep){
         String url = "http://viacep.com.br/ws/"+ cep + "/json/";

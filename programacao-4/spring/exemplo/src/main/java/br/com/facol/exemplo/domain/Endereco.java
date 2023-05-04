@@ -1,24 +1,18 @@
 package br.com.facol.exemplo.domain;
 
 import br.com.facol.exemplo.dto.EnderecoDTO;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cep")
+@Table(name = "endereco")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Endereco {
-
-    public Endereco(){
-
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
